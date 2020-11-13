@@ -1,0 +1,145 @@
+[ {
+  "name" : "mysql_stop",
+  "type" : "ANSIBLE",
+  "description" : null,
+  "path" : "mysql_ansible_operations/mysql_stop.yml",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "mysql_create_db",
+  "type" : "ANSIBLE",
+  "description" : null,
+  "path" : "mysql_ansible_operations/mysql_create_db.yml",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "mysql_install",
+  "type" : "ANSIBLE",
+  "description" : null,
+  "path" : "mysql_ansible_operations/mysql_install.yml",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "roles/mysql_stop/tasks/main",
+  "type" : null,
+  "description" : null,
+  "path" : "mysql_ansible_operations/roles/mysql_stop/tasks/main.yml",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "mysql_start",
+  "type" : "ANSIBLE",
+  "description" : null,
+  "path" : "mysql_ansible_operations/mysql_start.yml",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "roles/mysql_install/templates/mysql_user",
+  "type" : "SHELL",
+  "description" : null,
+  "path" : "mysql_ansible_operations/roles/mysql_install/templates/mysql_user.sh.j2",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "roles/mysql_create_db/tasks/main",
+  "type" : "ANSIBLE",
+  "description" : null,
+  "path" : "mysql_ansible_operations/roles/mysql_create_db/tasks/main.yml",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "roles/mysql_install/templates/my",
+  "type" : "ANSIBLE",
+  "description" : null,
+  "path" : "mysql_ansible_operations/roles/mysql_install/templates/my.cnf.j2",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "roles/mysql_install/tasks/main",
+  "type" : "ANSIBLE",
+  "description" : null,
+  "path" : "mysql_ansible_operations/roles/mysql_install/tasks/main.yml",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "roles/mysql_refresh/templates/output",
+  "type" : "SHELL",
+  "description" : null,
+  "path" : "mysql_ansible_operations/roles/mysql_refresh/templates/output.json.j2",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "mysql_create_user",
+  "type" : "ANSIBLE",
+  "description" : null,
+  "path" : "mysql_ansible_operations/mysql_create_user.yml",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "roles/mysql_install/tasks/install",
+  "type" : "ANSIBLE",
+  "description" : null,
+  "path" : "mysql_ansible_operations/roles/mysql_install/tasks/install.yml",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "roles/mysql_install/handlers/main",
+  "type" : "ANSIBLE",
+  "description" : null,
+  "path" : "mysql_ansible_operations/roles/mysql_install/handlers/main.yml",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "roles/mysql_start/tasks/main",
+  "type" : null,
+  "description" : null,
+  "path" : "mysql_ansible_operations/roles/mysql_start/tasks/main.yml",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "roles/mysql_refresh/tasks/main",
+  "type" : "ANSIBLE",
+  "description" : null,
+  "path" : "mysql_ansible_operations/roles/mysql_refresh/tasks/main.yml",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "mysql_refresh",
+  "type" : "ANSIBLE",
+  "description" : null,
+  "path" : "mysql_ansible_operations/mysql_refresh.yml",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "roles/mysql_install/vars/main",
+  "type" : "ANSIBLE",
+  "description" : null,
+  "path" : "mysql_ansible_operations/roles/mysql_install/vars/main.yml",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+}, {
+  "name" : "roles/mysql_create_user/tasks/main",
+  "type" : "ANSIBLE",
+  "description" : null,
+  "path" : "mysql_ansible_operations/roles/mysql_create_user/tasks/main.yml",
+  "content" : "",
+  "isMainFile" : false,
+  "mainFile" : false
+} ]

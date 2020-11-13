@@ -1,0 +1,9 @@
+- name: Create a new database
+  mysql_db:
+    login_host: "localhost"
+    login_user: "{{ dbuser }}"
+    login_password: "{{ password }}"
+    login_port: "{{ port }}"
+    name: "{{ dbname }}"
+    encoding: "{{ characterset }}"
+    state: "present"

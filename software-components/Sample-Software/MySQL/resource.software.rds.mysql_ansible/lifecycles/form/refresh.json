@@ -1,0 +1,32 @@
+{
+  "model": {
+  },
+  "schema": {
+    "type": "object",
+    "i18nDescription": {
+      "zh": "<a>确定对该云资源执行刷新状态吗?</a>",
+      "en": "<a>Are you sure to refresh the cloud resource?</a>"
+    },
+    "description": {
+      "zh": "<a>确定对该云资源执行刷新状态吗?</a>",
+      "en": "<a>Are you sure to refresh the cloud resource?</a>"
+    },
+    "properties": {
+      "description_0": {
+        "id": "description_0",
+        "index": 0,
+        "i18nTitle": {
+          "zh": "description_0",
+          "en": "description_0"
+        },
+        "condition": "1 === 2",
+        "hidden": true,
+        "type": "string",
+        "widget": {
+          "id": "string"
+        },
+        "default": ""
+      }
+    }
+  }
+}

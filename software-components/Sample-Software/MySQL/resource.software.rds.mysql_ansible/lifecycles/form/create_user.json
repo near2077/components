@@ -1,0 +1,347 @@
+{
+  "model": {
+    "dbuser": null,
+    "password": null,
+    "port": "3306",
+    "dbuser_new": null,
+    "password_new": null,
+    "allowed_hosts": null,
+    "priv_db": null,
+    "priv_tb": null,
+    "priv_grant": null,
+    "schemaFormValid": true
+  },
+  "schema": {
+    "type": "object",
+    "title": "",
+    "description": "",
+    "properties": {
+      "dbuser": {
+        "id": "dbuser",
+        "index": 0,
+        "i18nPlaceholder": {
+          "en": "Please enter the database username",
+          "zh": "请输入数据库用户名"
+        },
+        "i18nTitle": {
+          "zh": "数据库用户名",
+          "en": "Database username"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "widget": {
+          "id": "string"
+        },
+        "defaultValue": null,
+        "default": null,
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "用户名不能为空",
+            "en": "Enter a account name."
+          }
+        }
+      },
+      "password": {
+        "id": "password",
+        "index": 1,
+        "i18nPlaceholder": {
+          "en": "Please enter the database user password",
+          "zh": "请输入数据库用户密码"
+        },
+        "i18nTitle": {
+          "zh": "数据库用户密码",
+          "en": "Password of the database user"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "defaultValue": null,
+        "widget": {
+          "id": "password"
+        },
+        "default": null,
+        "pattern":"^(?![A-Za-z0-9]+$)(?![a-z0-9_!@#$%^&*`()-+=]+$)(?![A-Za-z_!@#$%^&*`()-+=]+$)(?![A-Z0-9_!@#$%^&*`()-+=]+$)[a-zA-Z0-9_!@#$%^&*`()-+=]{8,30}$",
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "密码不能为空",
+            "en": "Enter a password."
+          },
+          "pattern":{
+            "zh":"密码为8-30个字符,必须同时包含大写英文字母、小写英文字母、数字和特殊符号",
+            "en":"The password is 8-30 characters. It must contain three types of characters in case letters, numbers and special symbols."
+          }
+        }
+      },
+      "port": {
+        "id": "port",
+        "index": 2,
+        "i18nPlaceholder": {
+          "en": "Please enter the database connection port",
+          "zh": "请输入数据库连接端口"
+        },
+        "i18nTitle": {
+          "zh": "数据库连接端口",
+          "en": "Database connection port"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "widget": {
+          "id": "string"
+        },
+        "defaultValue": "3306",
+        "default": "3306",
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "数据库连接端口不能为空",
+            "en": "Enter a database connection port."
+          }
+        }
+      },
+      "dbuser_new": {
+        "id": "dbuser_new",
+        "index": 3,
+        "i18nPlaceholder": {
+          "en": "Please enter a new username",
+          "zh": "请输入新用户名"
+        },
+        "i18nTitle": {
+          "zh": "新用户名",
+          "en": "New user name"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "widget": {
+          "id": "string"
+        },
+        "defaultValue": null,
+        "default": null,
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "新用户名不能为空",
+            "en": "Enter a new account name."
+          }
+        }
+      },
+      "password_new": {
+        "id": "password_new",
+        "index": 4,
+        "i18nPlaceholder": {
+          "en": "Please enter a new password",
+          "zh": "请输入新密码"
+        },
+        "i18nTitle": {
+          "zh": "密码",
+          "en": "password"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "defaultValue": null,
+        "widget": {
+          "id": "password"
+        },
+        "default": null,
+        "pattern":"^(?![A-Za-z0-9]+$)(?![a-z0-9_!@#$%^&*`()-+=]+$)(?![A-Za-z_!@#$%^&*`()-+=]+$)(?![A-Z0-9_!@#$%^&*`()-+=]+$)[a-zA-Z0-9_!@#$%^&*`()-+=]{8,30}$",
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "密码不能为空",
+            "en": "Enter a password."
+          },
+          "pattern":{
+            "zh":"密码为8-30个字符,必须同时包含大写英文字母、小写英文字母、数字和特殊符号",
+            "en":"The password is 8-30 characters. It must contain three types of characters in case letters, numbers and special symbols."
+          }
+        }
+      },
+      "allowed_hosts": {
+        "id": "allowed_hosts",
+        "index": 5,
+        "i18nDescription": {
+          "en": "% Means that all hosts are allowed to connect, or enter a certain IP or network segment, such as '192.168.1.%'",
+          "zh": "% 表示允许所有主机连接, 或输入某个IP或网段, 例如'192.168.1.%'"
+        },
+        "i18nPlaceholder": {
+          "en": "Please enter the host allowed to connect when using this user",
+          "zh": "请输入使用该用户时允许连接的主机"
+        },
+        "i18nTitle": {
+          "zh": "白名单",
+          "en": "Whitelist"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "widget": {
+          "id": "string"
+        },
+        "defaultValue": null,
+        "default": null,
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "此内容不能为空",
+            "en": "This content cannot be empty."
+          }
+        }
+      },
+      "priv_db": {
+        "id": "priv_db",
+        "index": 6,
+        "i18nPlaceholder": {
+          "en": "Please specify the database that the user has permission to access",
+          "zh": "请指定用户有权限访问的数据库"
+        },
+        "i18nDescription": {
+          "en": "* Indicates all databases or input a database name.",
+          "zh": "* 表示所有数据库或输入数据库名。"
+        },
+        "i18nTitle": {
+          "zh": "数据库",
+          "en": "Datebase"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "widget": {
+          "id": "string"
+        },
+        "defaultValue": null,
+        "default": null,
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "此内容不能为空",
+            "en": "This content cannot be empty."
+          }
+        }
+      },
+      "priv_tb": {
+        "id": "priv_tb",
+        "index": 7,
+        "i18nDescription": {
+          "en": "* Indicates all tables or input a table name.",
+          "zh": "* 表示所有表或输入表名称。"
+        },
+        "i18nPlaceholder": {
+          "en": "Please specify the tables that the user has permission to access",
+          "zh": "请指定用户有权限访问的表"
+        },
+        "i18nTitle": {
+          "zh": "表",
+          "en": "Table"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "widget": {
+          "id": "string"
+        },
+        "defaultValue": null,
+        "default": null,
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "此内容不能为空",
+            "en": "This content cannot be empty."
+          }
+        }
+      },
+      "priv_grant": {
+        "id": "priv_grant",
+        "index": 8,
+        "i18nDescription": {
+          "en": "ALL,Alter,Create,Delete,Drop,INDEX,Insert,Select,Update, etc.; multiple privileges can be separated by ' , ';",
+          "zh": "ALL,Alter,Create,Delete,Drop,INDEX,Insert,Select,Update等;多权限可用英文逗号' , '隔开;"
+        },
+        "i18nPlaceholder": {
+          "en": "Please enter the permissions to be granted",
+          "zh": "请输入要赋予的权限"
+        },
+        "i18nTitle": {
+          "zh": "权限",
+          "en": "Privilege "
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "widget": {
+          "id": "string"
+        },
+        "defaultValue": null,
+        "default": null,
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "权限不能为空",
+            "en": "Privilege or privileges cannot be empty."
+          }
+        }
+      }
+    },
+    "widget": {
+      "id": "object"
+    }
+  }
+}

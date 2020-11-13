@@ -1,0 +1,156 @@
+{
+  "model": {
+    "repo_url": "https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm",
+    "port": "3306",
+    "dbuser": null,
+    "password": null,
+    "schemaFormValid": true
+  },
+  "schema": {
+    "type": "object",
+    "title": "",
+    "description": "",
+    "properties": {
+      "repo_url": {
+        "id": "repo_url",
+        "index": 0,
+        "i18nPlaceholder": {
+          "en": "Please enter the MySQL Yum Repository download URL",
+          "zh": "请输入MySQL Yum Repository下载地址"
+        },
+        "i18nTitle": {
+          "zh": "Yum Repository下载地址",
+          "en": "Yum Repository download URL"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "widget": {
+          "id": "string"
+        },
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "MySQL Repo下载地址不能为空",
+            "en": "Enter a MySQL Repository download URL"
+          }
+        },
+        "defaultValue": "https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm",
+        "default": "https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm"
+      },
+      "port": {
+        "id": "port",
+        "index": 2,
+        "i18nPlaceholder": {
+          "en": "Please enter the MySQL database connection port, the default is 3306",
+          "zh": "请输入MySQL数据库连接端口，默认为3306"
+        },
+        "i18nTitle": {
+          "zh": "MySQL连接端口",
+          "en": "MySQL connection port"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "widget": {
+          "id": "string"
+        },
+        "defaultValue": "3306",
+        "default": "3306",
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "连接端口不能为空",
+            "en": "Enter a port"
+          }
+        }
+      },
+      "dbuser": {
+        "id": "dbuser",
+        "index": 3,
+        "i18nPlaceholder": {
+          "en": "Please enter the database default username",
+          "zh": "请输入数据库默认用户名"
+        },
+        "i18nTitle": {
+          "zh": "管理员用户",
+          "en": "Database user"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "widget": {
+          "id": "string"
+        },
+        "defaultValue": null,
+        "default": null,
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "管理员用户不能为空",
+            "en": "Enter a administrator username"
+          }
+        }
+      },
+      "password": {
+        "id": "password",
+        "index": 4,
+        "i18nPlaceholder": {
+          "en": "Please enter the database password",
+          "zh": "请输入数据库密码"
+        },
+        "i18nTitle": {
+          "zh": "管理员密码",
+          "en": "Password"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "defaultValue": null,
+        "widget": {
+          "id": "password"
+        },
+        "default": null,
+        "isRequired": true,
+        "pattern":"^(?![A-Za-z0-9]+$)(?![a-z0-9_!@#$%^&*`()-+=]+$)(?![A-Za-z_!@#$%^&*`()-+=]+$)(?![A-Z0-9_!@#$%^&*`()-+=]+$)[a-zA-Z0-9_!@#$%^&*`()-+=]{8,30}$",
+        "validationMessage": {
+          "required": {
+            "zh": "密码不能为空",
+            "en": "Enter a password."
+          },
+          "pattern":{
+            "zh":"密码为8-30个字符,必须同时包含大写英文字母、小写英文字母、数字和特殊符号",
+            "en":"The password is 8-30 characters. It must contain three types of characters in case letters, numbers and special symbols."
+          }
+        }
+      }
+    },
+    "widget": {
+      "id": "object"
+    }
+  }
+}

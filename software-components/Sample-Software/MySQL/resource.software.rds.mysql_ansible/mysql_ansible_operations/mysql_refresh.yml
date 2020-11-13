@@ -1,0 +1,9 @@
+- hosts: remote
+  remote_user: root
+  become: yes
+  become_method: sudo
+  become_user: root
+  gather_facts: False
+
+  roles:
+    - mysql_refresh

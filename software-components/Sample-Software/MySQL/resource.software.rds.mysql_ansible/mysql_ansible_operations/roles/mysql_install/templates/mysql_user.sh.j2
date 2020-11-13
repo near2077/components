@@ -1,0 +1,49 @@
+#!/bin/bash
+
+password_temp=$(grep 'temporary password' /var/log/mysqld.log | awk -F ':' '{print $4;}')
+password_default=${password_temp:1}
+
+newpassword={{password}}
+dbname={{dbname}}
+dbuser={{dbuser}}
+# hostname=$(hostname)
+
+expect <<EOF
+spawn mysql -uroot -P{{dbport}} -p
+expect "password"
+send "${password_default}\n"
+expect "mysql>"
+
+# change default password policy
+send "set global validate_password.policy=0;\n"
+expect "mysql>"
+
+send "set global validate_password.length=1;\n"
+expect "mysql>"
+
+# change default password
+send "ALTER USER 'root'@'localhost' IDENTIFIED BY \"${newpassword}\";\n"
+expect "mysql>"
+
+# change default password
+send "create user 'root'@'%' identified by '${newpassword}';\n"
+expect "mysql>"
+
+# grant user privileges
+send "grant all privileges on *.* to 'root'@'%' with grant option;\n"
+expect "mysql>"
+
+send "use mysql;\n"
+expect "mysql>"
+
+# change default dbuser
+send "update user set user='${dbuser}' where user='root';\n"
+expect "mysql>"
+
+# # Allow all IP access
+# send "update user set host='%' where user='root' and host='localhost';\n"
+# expect "mysql>"
+
+send "flush privileges;\n"
+expect eof
+EOF

@@ -1,0 +1,56 @@
+- name: Configure DNS
+  lineinfile: dest=/etc/resolv.conf line='nameserver 114.114.114.114'
+
+- name: Open port {{ dbport }}
+  shell: firewall-cmd --zone=public --add-port={{ dbport }}/tcp --permanent
+  ignore_errors: True
+
+- name: service crond reload
+  shell: firewall-cmd --reload
+  ignore_errors: True
+
+- name: install yum-utils
+  yum: name=yum-utils state=present
+
+- name: Download repo file
+  get_url: url={{repo_url}} dest={{rpm_dir}}
+
+- name: install mysql yum repo
+  shell: yum localinstall -y mysql80-community-release-el7-3.noarch.rpm
+  args:
+    chdir: "{{ rpm_dir }}"
+
+- name: disable mysql57 yum repo
+  shell: yum-config-manager --disable mysql57-community
+  args:
+    chdir: "{{ rpm_dir }}"
+
+- name: enable mysql80 yum repo
+  shell: yum-config-manager --enable mysql80-community
+  args:
+    chdir: "{{ rpm_dir }}"
+
+- name: install mysql8
+  yum: name=mysql-community-server-8.0.21 state=present
+
+- name: copy configuration file to node
+  template: src=my.cnf.j2 dest=/etc/my.cnf
+  notify: restart mysql
+
+- name: copy script file to node
+  template: src=mysql_user.sh.j2 dest=/tmp/mysql_user.sh mode=0755
+
+- name: Setup start - up and start mysql
+  service: name=mysqld.service enabled=yes state=started
+
+- name: install expect
+  yum: name=expect state=present
+
+- name: Execute the script - change the mysql default password and enable root remote login
+  shell: /tmp/mysql_user.sh
+
+- name: Installed mysql-python
+  yum: name={{ packages }} state=present
+  vars:
+    packages:
+      - MySQL-python

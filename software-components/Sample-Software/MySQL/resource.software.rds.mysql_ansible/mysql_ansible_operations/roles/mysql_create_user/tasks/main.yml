@@ -1,0 +1,11 @@
+- name: grant mysql user
+  mysql_user:
+    login_host: "localhost"
+    login_user: "{{ dbuser }}"
+    login_password: "{{ password }}"
+    login_port: "{{ port }}"
+    name: "{{ dbuser_new }}"
+    password: "{{ password_new }}"
+    host: "{{ allowed_hosts }}"
+    priv: "{{ priv_db }}.{{ priv_tb }}:{{ priv_grant }}"
+    state: "present"

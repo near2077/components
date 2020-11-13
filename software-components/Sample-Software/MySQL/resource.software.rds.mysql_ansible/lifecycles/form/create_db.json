@@ -1,0 +1,393 @@
+{
+  "model": {
+    "dbuser": null,
+    "password": null,
+    "port": "3306",
+    "dbname": null,
+    "characterset": "utf8",
+    "schemaFormValid": true
+  },
+  "schema": {
+    "type": "object",
+    "title": "",
+    "description": "",
+    "properties": {
+      "dbuser": {
+        "id": "dbuser",
+        "index": 0,
+        "i18nPlaceholder": {
+          "en": "Please enter the database administrator username",
+          "zh": "请输入数据库管理员用户名"
+        },
+        "i18nTitle": {
+          "zh": "数据库管理员用户",
+          "en": "Database administrator user"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "widget": {
+          "id": "string"
+        },
+        "defaultValue": null,
+        "default": null,
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "用户名不能为空",
+            "en": "Enter a account name."
+          }
+        }
+      },
+      "password": {
+        "id": "password",
+        "index": 1,
+        "i18nPlaceholder": {
+          "en": "Please enter the database administrator password",
+          "zh": "请输入数据库管理员密码"
+        },
+        "i18nTitle": {
+          "zh": "数据库管理员密码",
+          "en": "Database administrator password"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "defaultValue": null,
+        "widget": {
+          "id": "password"
+        },
+        "default": null,
+        "isRequired": true,
+        "pattern":"^(?![A-Za-z0-9]+$)(?![a-z0-9_!@#$%^&*`()-+=]+$)(?![A-Za-z_!@#$%^&*`()-+=]+$)(?![A-Z0-9_!@#$%^&*`()-+=]+$)[a-zA-Z0-9_!@#$%^&*`()-+=]{8,30}$",
+        "validationMessage": {
+          "required": {
+            "zh": "密码不能为空",
+            "en": "Enter a password."
+          },
+          "pattern":{
+            "zh":"密码为8-30个字符,必须同时包含大写英文字母、小写英文字母、数字和特殊符号",
+            "en":"The password is 8-30 characters. It must contain three types of characters in case letters, numbers and special symbols."
+          }
+        }
+      },
+      "port": {
+        "id": "port",
+        "index": 2,
+        "i18nPlaceholder": {
+          "en": "Please enter the database connection port",
+          "zh": "请输入数据库连接端口"
+        },
+        "i18nTitle": {
+          "zh": "数据库连接端口",
+          "en": "Database connection port"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "widget": {
+          "id": "string"
+        },
+        "defaultValue": "3306",
+        "default": "3306",
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "数据库连接端口不能为空",
+            "en": "Enter a database connection port."
+          }
+        }
+      },
+      "dbname": {
+        "id": "dbname",
+        "index": 3,
+        "i18nPlaceholder": {
+          "en": "Please enter the name of the database to be created",
+          "zh": "请输入创建数据库名"
+        },
+        "i18nTitle": {
+          "zh": "数据库名",
+          "en": "Database"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "widget": {
+          "id": "string"
+        },
+        "defaultValue": null,
+        "default": null,
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "数据库名不能为空",
+            "en": "Enter a database name."
+          }
+        }
+      },
+      "characterset": {
+        "id": "characterset",
+        "index": 4,
+        "i18nPlaceholder": {
+          "en": "Please specify the database character set",
+          "zh": "请指定数据库字符集"
+        },
+        "i18nTitle": {
+          "zh": "数据库字符集",
+          "en": "Database character set"
+        },
+        "config": {
+          "visibility": {
+            "allowInRequest": true
+          },
+          "modification": {
+            "allowInRequest": true
+          }
+        },
+        "type": "string",
+        "widget": {
+          "id": "select"
+        },
+        "defaultValue": "utf8",
+        "options": [
+          "big5",
+          "dec8",
+          "cp850",
+          "hp8",
+          "koi8r",
+          "latin1",
+          "latin2",
+          "swe7",
+          "ascii",
+          "ujis",
+          "sjis",
+          "hebrew ",
+          "tis620",
+          "euckr",
+          "koi8u",
+          "gb2312",
+          "greek",
+          "cp1250",
+          "gbk",
+          "latin5",
+          "armscii8",
+          "ucs2",
+          "cp866",
+          "keybcs2",
+          "macce",
+          "macroman",
+          "cp852",
+          "latin7",
+          "utf8mb4",
+          "cp1251",
+          "utf16",
+          "utf16le",
+          "cp1256",
+          "cp1257",
+          "utf32",
+          "binary",
+          "geostd8",
+          "cp932",
+          "eucjpms"
+        ],
+        "selectDatas": [
+          {
+            "id": "utf8",
+            "name": "utf8"
+          },
+          {
+            "id": "big5",
+            "name": "big5"
+          },
+          {
+            "id": "dec8",
+            "name": "dec8"
+          },
+          {
+            "id": "cp850",
+            "name": "cp850"
+          },
+          {
+            "id": "hp8",
+            "name": "hp8"
+          },
+          {
+            "id": "koi8r",
+            "name": "koi8r"
+          },
+          {
+            "id": "latin1",
+            "name": "latin1"
+          },
+          {
+            "id": "latin2",
+            "name": "latin2"
+          },
+          {
+            "id": "swe7",
+            "name": "swe7"
+          },
+          {
+            "id": "ascii",
+            "name": "ascii"
+          },
+          {
+            "id": "ujis",
+            "name": "ujis"
+          },
+          {
+            "id": "sjis",
+            "name": "sjis"
+          },
+          {
+            "id": "hebrew ",
+            "name": "hebrew "
+          },
+          {
+            "id": "tis620",
+            "name": "tis620"
+          },
+          {
+            "id": "euckr",
+            "name": "euckr"
+          },
+          {
+            "id": "koi8u",
+            "name": "koi8u"
+          },
+          {
+            "id": "gb2312",
+            "name": "gb2312"
+          },
+          {
+            "id": "greek",
+            "name": "greek"
+          },
+          {
+            "id": "cp1250",
+            "name": "cp1250"
+          },
+          {
+            "id": "gbk",
+            "name": "gbk"
+          },
+          {
+            "id": "latin5",
+            "name": "latin5"
+          },
+          {
+            "id": "armscii8",
+            "name": "armscii8"
+          },
+          {
+            "id": "ucs2",
+            "name": "ucs2"
+          },
+          {
+            "id": "cp866",
+            "name": "cp866"
+          },
+          {
+            "id": "keybcs2",
+            "name": "keybcs2"
+          },
+          {
+            "id": "macce",
+            "name": "macce"
+          },
+          {
+            "id": "macroman",
+            "name": "macroman"
+          },
+          {
+            "id": "cp852",
+            "name": "cp852"
+          },
+          {
+            "id": "latin7",
+            "name": "latin7"
+          },
+          {
+            "id": "utf8mb4",
+            "name": "utf8mb4"
+          },
+          {
+            "id": "cp1251",
+            "name": "cp1251"
+          },
+          {
+            "id": "utf16",
+            "name": "utf16"
+          },
+          {
+            "id": "utf16le",
+            "name": "utf16le"
+          },
+          {
+            "id": "cp1256",
+            "name": "cp1256"
+          },
+          {
+            "id": "cp1257",
+            "name": "cp1257"
+          },
+          {
+            "id": "utf32",
+            "name": "utf32"
+          },
+          {
+            "id": "binary",
+            "name": "binary"
+          },
+          {
+            "id": "geostd8",
+            "name": "geostd8"
+          },
+          {
+            "id": "cp932",
+            "name": "cp932"
+          },
+          {
+            "id": "eucjpms",
+            "name": "eucjpms"
+          }
+        ],
+        "default": "utf8",
+        "isRequired": true,
+        "validationMessage": {
+          "required": {
+            "zh": "字符集不能为空",
+            "en": "Select a database character set."
+          }
+        }
+      }
+    },
+    "widget": {
+      "id": "object"
+    }
+  }
+}

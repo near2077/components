@@ -1,0 +1,11 @@
+{% if 'Active: active (running)' in mysql_status.stdout %}
+{"status": "started"}
+{% elif 'Active: active (exited)' in mysql_status.stdout %}
+{"status": "stopping"}
+{% elif 'Active: deactivating (stop)' in mysql_status.stdout %}
+{"status": "stopping"}
+{% elif 'Active: inactive (dead)' in mysql_status.stdout %}
+{"status": "stopped"}
+{% else %}
+{"status": "{{mysql_status.stdout}}"}
+{% endif %}
